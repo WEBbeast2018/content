@@ -1,0 +1,10 @@
+{
+  "name": "Meetups",
+  "scripts": {
+    "m2.1": "reveal-md ./02.Performance2_Chrome_Devtools/Readme.md",
+    "m2.2": "reveal-md ./02.Performance2_Memory_leaks/Readme.md  --theme league",
+    "m2.3": "reveal-md ./02.Performance2_ESModules_VS_CommonJS/Readme.md  --theme serif",
+    "m2.4": "reveal-md ./02.Performance2_Web_worker/Readme.md  --theme sky"
+  },
+  "dependencies": {}
+}
