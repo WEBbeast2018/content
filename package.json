@@ -1,10 +1,10 @@
 {
   "name": "Meetups",
   "scripts": {
-    "m2.1": "reveal-md ./02.Performance2_Chrome_Devtools/Readme.md",
-    "m2.2": "reveal-md ./02.Performance2_Memory_leaks/Readme.md  --theme league",
-    "m2.3": "reveal-md ./02.Performance2_ESModules_VS_CommonJS/Readme.md  --theme serif",
-    "m2.4": "reveal-md ./02.Performance2_Web_worker/Readme.md  --theme sky"
+    "m1.1": "reveal-md ./module1_fundamentals/m1.lesson01.md",
+    "m1.2": "reveal-md ./module1_fundamentals/m1.lesson02.md  --theme league",
+    "m1.3": "reveal-md ./module1_fundamentals/m1.lesson03.md  --theme serif",
+    "m1.4": "reveal-md ./module1_fundamentals/m1.lesson04.md  --theme sky"
   },
   "dependencies": {}
 }
