@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML elements loop</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yuval Bar Levi">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="first_page_styles.css">
+    <style>
+        .btn {
+            background-color: rgb(67, 67, 146);
+        }
+        div > button {
+            background-color: rgb(255, 174, 0);
+        }
+        ul li:first-child {
+            background-color: rgb(255, 174, 0);
+        }
+    </style>
+</head>
+<body>
+<div class="buttons">
+    <button class="btn btn-primary">OK</button>
+    <button class="btn">Back</button>
+</div>
+<ul>
+    <li>
+        <a href="https://developer.mozilla.org/he/">anchor tag</a>
+    </li>
+    <li>
+        img
+    </li>
+    <li>lists</li>
+    <li>header / footer / nav</li>
+    <li>h1-h6</li>
+    <li>p</li>
+    <li>i</li>
+    <li>div</li>
+</ul>
+<script>
+    // const items = document.querySelectorAll('li');
+    const listElm = document.querySelector('ul');
+
+    const arrFromList = Array.from(listElm.children);
+
+    arrFromList.forEach(function(item, i){
+        item.innerHTML = 'mississipi ' + i;
+    });
+</script>
+</body>
+</html>
