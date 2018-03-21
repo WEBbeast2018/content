@@ -4,6 +4,21 @@
 <head>
     <title>advanced js</title>
     <meta charset="UTF-8">
+    <style>
+            .user-card {
+                display: flex;
+                padding: 5px;
+                border: 2px gray dashed;
+            }
+            .user-card img {
+                height: 100px;
+            }
+            .user-card p {
+                font-weight: 800;
+                font-family: sans-serif;
+                padding: 10px;
+            }
+    </style>
 </head>
 
 <body>
@@ -75,20 +90,51 @@
     // ========== Fetch ==========
     const fetchButton = document.querySelector('button.fetch');
 
+    // fetchButton.onclick  = function () {
+    //     console.log('fetch users');
+
+    //     fetch('https://api.github.com/users')
+    //         .then(function(response) {
+    //             return response.json();
+    //         })
+    //         .then(function(myJson) {
+    //             console.log(myJson);
+    //             return myJson;
+    //         })
+    //         .then(function(users) {
+    //             document.querySelector('.output').innerHTML = users[0];
+    //         });
+    // }
+    
+    function addUser(userData) {
+        const userNode = document.createElement('article');
+        userNode.className = 'user-card';
+        
+        userNode.innerHTML = `
+            <div>
+                <img src="${userData.avatar_url}">
+            </div>
+            <p>
+                <a target="_blank" href="${userData.html_url}"> 
+                    ${userData.login}
+                </a>
+            </p>
+        `
+        document.querySelector('.output').appendChild(userNode);
+    }
+
     fetchButton.onclick  = function () {
         console.log('fetch users');
 
         fetch('https://api.github.com/users')
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(myJson) {
-                console.log(myJson);
-                return myJson;
-            })
+            .then(response => response.json())
+            
             .then(function(users) {
-                document.querySelector('.output').innerHTML = users[0];
-            });
+                users.forEach(user => {
+                    console.log(user);
+                    addUser(user);
+                });
+            })
     }
 
 </script>
