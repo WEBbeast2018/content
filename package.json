@@ -1,5 +1,5 @@
 {
-  "name": "Meetups",
+  "name": "webbeast-content",
   "scripts": {
     "m1.1": "reveal-md ./module1_fundamentals/m1.lesson01.md",
     "m1.2": "reveal-md ./module1_fundamentals/m1.lesson02.md  --theme league",
