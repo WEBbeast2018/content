@@ -5,7 +5,10 @@
     "m1.2": "reveal-md ./module1_fundamentals/m1.lesson02.md  --theme league",
     "m1.3": "reveal-md ./module1_fundamentals/m1.lesson03.md  --theme serif",
     "m1.4": "reveal-md ./module1_fundamentals/m1.lesson04.md  --theme sky",
-    "m1.5": "reveal-md ./module1_fundamentals/m1.lesson05.md  --theme night"
+    "m1.5": "reveal-md ./module1_fundamentals/m1.lesson05.md  --theme night",
+    "m1.6": "reveal-md ./module1_fundamentals/m1.lesson06.md  --theme night",
+    "m1.7": "reveal-md ./module1_fundamentals/m1.lesson07.md  --theme simple",
+    "m1.8": "reveal-md ./module1_fundamentals/m1.lesson08.md  --theme solarized"
   },
   "dependencies": {}
 }
