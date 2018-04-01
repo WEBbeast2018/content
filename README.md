@@ -26,14 +26,15 @@ Repo structure is as following:
 ### Module 1 - Fundamentals
 1. Starting up
 2. Javascript basics 1
-3. Javascript basics 2 + DOM manipulation
-4. Javascript Advanced + es6 (and up) features
-5. Debugging and reverse engineering and with dev-tools
-6. Typescript
-7. Node JS + client-server architecture implementation
-8. JQuery + Ajax/Async requests
-9. Adding JS libraries 1: HTML templates + Engines, lodash
-10. Adding JS libraries 2: D3, threeJS
+3. Javascript basics 2
+4. Javascript advanced functionality
+5. Introduction to NodeJS and Server side
+6. Introduction to open source
+7. Advanced debugging and Introduction to JQuery
+8. Working with libraries: HTML templates Engines, lodash, (ThreeJS, D3)
+9. Working with API: leaflet
+10. NPM and Typescript
+
 
 ---
 
