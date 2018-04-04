@@ -33,7 +33,7 @@ Repo structure is as following:
 7. Advanced debugging and Introduction to JQuery
 8. Working with libraries: template engines & lodash (extra: ThreeJS, D3)
 9. Working with API: leaflet & OpenWeatherAPI
-10. NPM and Typescript
+10. Javascript Modules, NPM and Typescript introduction
 
 
 ---
