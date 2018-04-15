@@ -16,7 +16,7 @@
         padding: 5px;
         font-size: 24px;
         background-color: #7bdaff;
-        color: #fff;
+        color: #000;
     }
 
     article {
@@ -38,9 +38,13 @@
 </script>
 
 <script id='multi-article-template1' type='text/x-handlebars-template'>
-    {{#each articles}}
+    {{#each entries}}
     <article>
-        <h2>{{title}} (multi-article-template1)</h2>
+        <h2>
+            <a href="{{src}}" target="_blank">
+                {{title}} (multi-article-template1)
+            </a>
+        </h2>
         <blockquote>
             {{body}}...
         </blockquote>
@@ -83,17 +87,17 @@
             src: 'https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5'
         },
     ];
-//    let context = {title: 'My New Post', body: 'This is my first post!'};
-    const outputHTML = articleTmpl(data[0]) +  articleTmpl(data[1]);
-    document.querySelector('.output').innerHTML = outputHTML;
+    // let context = {title: 'My New Post', body: 'This is my first post!'};
+    // const outputHTML = articleTmpl(data[0]) + articleTmpl(data[1]);
+    // document.querySelector('.output').innerHTML = outputHTML;
 
     // template loop - example 1
-//    const multiArticleTmpl1 = Handlebars.compile(document.getElementById('multi-article-template1').innerHTML);
-//    document.querySelector('.output').innerHTML = multiArticleTmpl1({ articles:data });
+    // const multiArticleTmpl1 = Handlebars.compile(document.getElementById('multi-article-template1').innerHTML);
+    // document.querySelector('.output').innerHTML = multiArticleTmpl1({entries: data});
 
     // template loop - example 2
-//    const multiArticleTmpl2 = Handlebars.compile(document.getElementById('multi-article-template2').innerHTML);
-//    document.querySelector('.output').innerHTML = multiArticleTmpl2(data);
+       const multiArticleTmpl2 = Handlebars.compile(document.getElementById('multi-article-template2').innerHTML);
+       document.querySelector('.output').innerHTML = multiArticleTmpl2(data);
 
 </script>
 </body>

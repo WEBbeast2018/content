@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Application 1</title>
+
+    <link rel="stylesheet" href="./style.css"/>
+
+    <!-- referance to Leaflet API -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!-- the header section: choosing a city -->
+<header>
+    <h1 class="mainTitle">Wheater Application</h1>
+</header>
+
+<!-- the select city section on top of the page -->
+<!--<div class="selectCity dropdown">-->
+<section class="selectCity">
+    <h2>  Bootsrap inhanced dropdown =>  </h2>
+
+    <div class=" dropdown">
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose a City
+            <label></label>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" value="new york,us">New York</a>
+            <a class="dropdown-item" href="#" value="prague,cz">Prague</a>
+            <a class="dropdown-item" href="#" value="paris,fr">Paris</a>
+            <a class="dropdown-item" href="#" value="london,gb">London</a>
+            <a class="dropdown-item" href="#" value="rome,it">Rome</a>
+            <a class="dropdown-item" href="#" value="berlin,de">Berlin</a>
+            <a class="dropdown-item" href="#" value="amsterdam,nl">Amsterdam</a>
+            <a class="dropdown-item" href="#" value="beijing,cn">Beijing</a>
+            <a class="dropdown-item" href="#" value="tokyo,jp">Tokyo</a>
+            <a class="dropdown-item" href="#" value="cairo,eg">Cairo</a>
+        </div>
+    </div>
+
+</section>
+<!-- the display section: Weather Data about the choosen City -->
+<div class="display">
+    <h2 id="cityName"> SELECT A CITY<!-- insert here the name of the choosen city --> </h2>
+    <div class="weatherTitle">
+        <span id="weatherIcon"> <!-- insert here the weather icon --> </span>
+        <span id="temp"> <!-- insert here the temperature in Celcius units next to the weather icon --> </span>
+        <span id="rain"> <!-- insert here the weather condition next to the temperature --> </span>
+    </div>
+    <table class="weatherData">
+        <tr>
+            <th>Humidity</th>
+            <td id="humidity"> <!-- insert here the humidity data --> </td>
+        </tr>
+        <tr>
+            <th>Cloudness</th>
+            <td id="cloudness"> <!-- insert here the cloudness data --> </td>
+        </tr>
+        <tr>
+            <th>Weather Conditions</th>
+            <td id="description"> <!-- insert here the weather discription --> </td>
+        </tr>
+    </table>
+</div>
+<!-- the footer section: the map -->
+<div class="map" id="mapid">
+
+</div>
+
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script src='./scripts/City.js'></script>
+<script src='./scripts/Weather.js'></script>
+<script src='./scripts/main.js'></script>
+
+</body>
+</html>

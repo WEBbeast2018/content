@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    width: auto;
+    height: 100%;
+    grid-template: 0.5fr 1fr 2.5fr / 1fr 2fr;
+}
+
+header {
+    grid-area: 1 / 1 / 2 / span 3;
+    background-color: dodgerblue;
+    text-align: center;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+h2 {
+    text-transform: capitalize;
+    font-size: 30px;
+}
+
+table {
+    width: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+tr, td {
+    border: 1px solid black;
+    width: 50%;
+    font-size: 25px;
+}
+
+th {
+    background-color: mediumturquoise;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+span {
+    margin: 5px 30px;
+}
+
+select {
+    font-size: 25px;
+}
+
+.selectCity {
+    padding: 20px;
+    display: flex;
+    text-align: center;
+}
+
+.display {
+    padding: 10px;
+    grid-area: 3 / 1 / span 2 / 2;
+}
+
+.display h2 {
+    text-transform: uppercase;
+    font-size: 35px;
+    text-align: center;
+}
+
+.weatherTitle {
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    margin: 15px
+}
+
+.map {
+    grid-area: 2 / 2 / span 3 / span 2;
+}
+
+#mapid {
+    margin: 10px;
+    height: 80%;
+    border: 1px solid gray;
+}
