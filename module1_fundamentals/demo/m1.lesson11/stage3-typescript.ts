@@ -57,12 +57,10 @@ const teacher2 = new Professor('Sarit', 'Hadad', 35, 'F', 'HTML');
 // teacher2.firstName // cannot access private members
 
 interface DB {
-    teachers: Array<Teacher>,
-
-    // students: Array<Student>,
-    getAllProfessors(): Array<Professor>,
-
-    // getTrainingPairsStr(): string
+    teachers: Array<Teacher>;
+    // students: Array<Student>;
+    getAllProfessors(): Array<Professor>;
+    // getTrainingPairsStr(): string;
 }
 
 function createDB(teachers: Array<Teacher>, student: Array<Student>): DB {
