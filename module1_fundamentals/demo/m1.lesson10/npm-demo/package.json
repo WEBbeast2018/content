@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "moshe": "node -v",
-    "furman": "node furman.js",
+    "furman": "node demo.js",
+    "start": "node demo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

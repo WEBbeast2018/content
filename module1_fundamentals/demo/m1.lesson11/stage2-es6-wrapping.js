@@ -34,21 +34,39 @@ class Professor extends Teacher {
     constructor(first, last, age, gender, subject, trainee) {
         super(first, last, age, gender, subject);
         if (trainee) {
-            this.trainee = trainee; // Object of type Intern
+            this.setTrainee(trainee); // Object of type Intern
         }
     }
 
     toString() {
         // implement using super
-        return super.toString() + 'foo';
-    };
+        return super.toString() + ' and I am a Professor.';
+    }
+
+    setTrainee(trainee) {
+        this.trainee = trainee;
+    }
 }
 
 Professor.salary = 12000;
 
 
 class Trainee extends Teacher {
-    // Implement
+    constructor(first, last, age, gender, subject, trainer) {
+        super(first, last, age, gender, subject);
+        if (trainer) {
+            this.setTrainer(trainer); // Object of type Intern
+        }
+    }
+
+    toString() {
+        // implement using super
+        return super.toString() + ' and I am a Professor.';
+    };
+
+    setTrainer(trainer) {
+        this.trainer = trainer
+    }
 }
 
 class Student extends Person {
@@ -58,7 +76,7 @@ class Student extends Person {
     }
 
     toString() {
-        // implement using super
+        return super.toString() + ' and I am a Student.';
     };
 }
 
@@ -72,19 +90,30 @@ class Student extends Person {
 // Professor Moshe Cohen Trainee is: Moshe Sharet
 
 const teacher1 = new Professor('David', 'Levi', 40, 'M', 'Javascript');
-const teacher2 = new Trainee('Sarit', 'Hadad', 35, 'F', 'HTML');
+const teacher2 = new Trainee('Sarit', 'Hadad', 35, 'F', 'HTML', teacher1);
+teacher1.setTrainee(teacher2);
+
+const teacher3 = new Professor('Omer', 'Adam', 28, 'M', 'Angular');
+const teacher4 = new Trainee('Neta', 'Barzilai', 25, 'F', 'CSS', teacher3);
+teacher3.setTrainee(teacher4);
+
+
 const student1 = new Student('Dudu', 'Aaharon', 28, 'M', ['Javascript', 'HTML']);
 
 const DB = {
-    teachers: [teacher1, teacher2],
-    students: [student1], // TODO: add student2, student3
+    teachers: [teacher1, teacher2, teacher3, teacher4],
+    students: [student1],
     getAllProfessors: function () {
-        // TODO: implement
-        return this.teachers;
+        return this.teachers.filter(t => t instanceof Professor);
     },
     getTrainingPairsStr: function () {
-        // TODO: implement
-        return '';
+        const professors = this.getAllProfessors();
+        let str = '';
+        professors.forEach(p => {
+            str += `Professor ${p.getName()} Trainee is: ${p.trainee.getName()}\n`
+        });
+
+        return str;
     }
 };
 
@@ -92,5 +121,6 @@ const DB = {
 // console.log(Teacher.numOfTeachers);
 // console.log(teacher1.toString());
 // console.log(student1.toString());
-// console.log(DB.getTrainingPairs());
-console.log(DB);
+// console.log(DB.getAllProfessors());
+console.log(DB.getTrainingPairsStr());
+// console.log(DB);

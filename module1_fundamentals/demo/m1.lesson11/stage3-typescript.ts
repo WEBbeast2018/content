@@ -3,7 +3,7 @@
 type genderType = 'M' | 'F'
 
 // or
-enum genderEnum { Male, Female };
+enum genderEnum { Male, Female }
 
 abstract class Person {
     private readonly firstName: string;
