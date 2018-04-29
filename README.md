@@ -34,7 +34,19 @@ Repo structure is as following:
 8. Working with libraries: template engines & lodash (extra: ThreeJS, D3)
 9. Working with API: leaflet & OpenWeatherAPI
 10. Javascript Modules, NPM and Typescript introduction
+11. Javascript OOP: old days to Typescript
 
+### Module 2 - Frontend
+1. Introduction to SPA and Angular
+2. Angular 101 Workshop 1/2
+3. Angular 101 Workshop 2/2
+4. Angular Advanced
+5. Angular 3rd party
+6. Redux
+7. Redux
+8. react
+9. react
+10. Vue.js
 
 ---
 
