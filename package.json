@@ -2,6 +2,7 @@
   "name": "webbeast-content",
   "author": "Yuval Bar Levi, Webiks O.I.",
   "scripts": {
+    "guide": "reveal-md ./WEBBEAST_CODE_GUIDE.md",
     "m1.1": "reveal-md ./module1_fundamentals/m1.lesson01.md",
     "m1.2": "reveal-md ./module1_fundamentals/m1.lesson02.md  --theme league",
     "m1.3": "reveal-md ./module1_fundamentals/m1.lesson03.md  --theme serif",

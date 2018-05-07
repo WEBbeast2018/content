@@ -77,3 +77,28 @@ transform: rotateY(0);
 ---
 # JS
 ###
+
+---
+### function declaration / expression
+When functions are constants - prefer function [declarations](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
+```
+// declaration
+function foo(){}
+
+// expression - constant
+const foo = function (){}
+
+// expression - variable
+// (only when function may be replaced)
+let foo = function (){}
+```
+
+---
+
+
+# Git
+* Do not include files from other projects on PR
+* Use .gitignore
+* Uploading Branch is not enough - Open a PR!
+
+---
