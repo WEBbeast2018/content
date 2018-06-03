@@ -71,8 +71,8 @@ const myStore = createStore(itemsReducer, initState);
 
   myStore.subscribe((state, action) =>{
     console.log(`state has change because of action ${action.type}. new state: `, state);
-    test[0].state = state;
-    test[0].pass = true;
+    tests[0].state = state;
+    tests[0].pass = true;
   });
 
   myStore.dispatch({
