@@ -52,6 +52,7 @@ function itemsReducer(state, action) {
 
     case "DELETE_SELECTED_ITEM":
       return Object.assign({}, state, {
+        selected: -1,
         items: state.items.filter((item, index) => index !== state.selected)
       });
 
