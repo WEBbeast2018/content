@@ -25,6 +25,7 @@
     "m2.9": "reveal-md ./module2_frontend/m2.lesson09.md  --theme serif",
     "m2.10": "reveal-md ./module2_frontend/m2.lesson10.md  --theme serif",
     "m2.11": "reveal-md ./module2_frontend/m2.lesson11.md  --theme league",
-    "m3.1": "reveal-md ./module3_backend/m3.lesson1.md  --theme solarized"
+    "m3.1": "reveal-md ./module3_backend/m3.lesson01.md  --theme solarized",
+    "m3.2": "reveal-md ./module3_backend/m3.lesson02.md  --theme serif"
   }
 }
