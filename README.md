@@ -36,17 +36,42 @@ Repo structure is as following:
 10. Javascript Modules, NPM and Typescript introduction
 11. Javascript OOP: old days to Typescript
 
+---
+
 ### Module 2 - Frontend
 1. Introduction to SPA and Angular
 2. Angular 101 Workshop 1/2
 3. Angular 101 Workshop 2/2
 4. Angular Advanced
 5. Angular 3rd party
-6. Redux
-7. Redux
-8. react
-9. react
+6. Redux 1/2
+7. Redux 2/2
+8. react 1/2
+9. react 2/2
 10. Vue.js
+
+---
+
+### Module 3 - Backend
+1. Getting started with node
+2. From Node to Express 1/2
+3. From Node to Express 2/2
+4. MongoDB 1/2
+5. MongoDB 2/2
+6. GraphQL
+7. More about Network Protocols
+
+---
+
+### Module 4 - Advanced Concepts
+1. Unit Testing
+2. RxJS 1/2
+3. RxJS 2/2
+4. Modularity and Microservices Architecture
+5. Client and server: roles and state/data managment
+6. Security -  Common issues and solutions
+7. HTTPS and Authentication
+8. Performance analysis and improvement
 
 ---
 
