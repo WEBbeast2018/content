@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EX03 FlatMap</title>
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
+</head>
+<body>
+<button onclick="getData()">Get Data</button>
+<ol>
+  <li>
+    <input id="item1" type="checkbox">
+    <label for="item1">Item 1</label>
+  </li>
+  <li>
+    <input id="item2" type="checkbox">
+    <label for="item2">Item 2</label>
+  </li>
+  <li>
+    <input id="item3" type="checkbox">
+    <label for="item3">Item 3</label>
+  </li>
+</ol>
+<pre id="output"></pre>
+<script>
+  function getData() {
+    const itemsID = [];
+    let i = 1;
+    let ItemEl = document.getElementById("item" + i);
+    while(ItemEl) {
+      if(ItemEl.checked) {
+        itemsID.push(i);
+      }
+      i++;
+      ItemEl = document.getElementById("item" + i);
+    }
+    fetchTodos(itemsID);
+  }
+
+  function fetchTodos(itemsID) {
+    const responseMetastream = Rx.Observable.from(itemsID)
+      .flatMap(itemValue =>
+        Rx.Observable.fromPromise(
+          $.get('https://jsonplaceholder.typicode.com/todos/' + itemValue)
+        )
+      );
+
+    // metastream - stream of streams...
+    responseMetastream.subscribe(data => {
+      console.log(data);
+      document.getElementById("output").innerHTML += JSON.stringify(data, null, 2);
+    })
+  }
+</script>
+</body>
+</html>
