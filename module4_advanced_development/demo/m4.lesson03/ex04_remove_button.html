@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EX02 simple request</title>
+  <title>EX03 FlatMap</title>
   <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
   <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
+  <style>
+    p {
+      position: relative;
+      border: 1px gray dashed;
+    }
+    p button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
 </head>
 <body>
 <button onclick="getData()">Get Data</button>
@@ -22,7 +33,7 @@
     <label for="item3">Item 3</label>
   </li>
 </ol>
-<pre id="output"></pre>
+<div id="output"></div>
 <script>
   function getData() {
     const itemsID = [];
@@ -40,7 +51,7 @@
 
   function fetchTodos(itemsID) {
     const responseMetastream = Rx.Observable.from(itemsID)
-      .map(itemValue =>
+      .flatMap(itemValue =>
         Rx.Observable.fromPromise(
           $.get('https://jsonplaceholder.typicode.com/todos/' + itemValue)
         )
@@ -49,7 +60,24 @@
     // metastream - stream of streams...
     responseMetastream.subscribe(data => {
       console.log(data);
-      document.getElementById("output").innerHTML = JSON.stringify(data, null, 2);
+      // create item paragraph;
+      const paragraphEl = document.createElement('P');
+      paragraphEl.innerHTML =
+        `<h3>${data.title}</h3>
+         <button>X</button>`;
+      document.getElementById("output").appendChild(paragraphEl);
+
+      // create event stream
+      const clickStream = Rx.Observable.fromEvent(paragraphEl.querySelector('button'), 'click');
+      const doubleClickStream = clickStream
+        .bufferWhen(() => clickStream.debounceTime(1000))
+        .map(arr => arr.length)
+        .filter(len => len === 2);
+
+      const subscription = doubleClickStream.subscribe(() => {
+        paragraphEl.remove();
+        subscription.unsubscribe();
+      })
     })
   }
 </script>
