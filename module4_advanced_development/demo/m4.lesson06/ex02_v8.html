@@ -30,9 +30,9 @@
 	function doWorkNumberType() {
 		console.time('doWorkStaticType');
 		const a = 12341234;
-		const b = 56785678
+		const b = 56785678;
 		for(let i = 0; i < 10000000; i++) {
-			add((i==50000) ? a : b);
+			add((i===50000) ? a : b);
 		}
 		console.timeEnd('doWorkStaticType');
 	}
@@ -41,9 +41,9 @@
 	function doWorkStringType() {
 		console.time('doWorkStaticType');
 		const a = 'abcd';
-		const b = 'abcd'
+		const b = 'abcd';
 		for(let i = 0; i < 10000000; i++) {
-			add((i==50000) ? a : b);
+			add((i===50000) ? a : b);
 		}
 		console.timeEnd('doWorkStaticType');
 	}
@@ -52,9 +52,9 @@
 	function doWorkDynamicType() {
 		console.time('doWorkDynamicType');
 		const a = 1234;
-		const b = 'abcd'
+		const b = 'abcd';
 		for(let i = 0; i < 10000000; i++) {
-			add((i==50000) ? a : b);
+			add((i===50000) ? a : b);
 		}
 		console.timeEnd('doWorkDynamicType');
 	}
@@ -63,7 +63,6 @@
 	function doWorkNotOptimizable() {
 		console.time('doWorkNotOptimizable');
 		with(console) {
-			log('some log')
 			const a = 1234;
 			const b = 5678;
 			for(let i = 0; i < 10000000; i++) {
