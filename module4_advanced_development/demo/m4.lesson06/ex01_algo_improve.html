@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX01 simple request</title>
+</head>
+<body>
+<pre id="output"></pre>
+<script>
+	"use strict";
+	const data = [];
+	for (let i = 0; i < 1000; i++) {
+		const collection = [];
+		for (let i = 0; i < 1000; i++) {
+			collection.push({
+
+            })
+		}
+		data.push()
+	}
+
+	function doWork() {
+		const input = parseInt(document.getElementById('fiboInput').value, 10);
+		const output = fibonacci(input);
+		console.log('output is ' + output);
+		document.getElementById('fiboOutput').innerText = output;
+	}
+
+	// get the N number in fibonacci series
+	function fibonacci(num) {
+		let a = 1;
+		let b = 0;
+		let temp;
+
+		while (num >= 0) {
+			temp = a;
+			a = a + b;
+			b = temp;
+			num--;
+		}
+		return b;
+	}
+</script>
+</body>
+</html>
