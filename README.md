@@ -67,11 +67,11 @@ Repo structure is as following:
 1. Unit Testing
 2. RxJS 1/2
 3. RxJS 2/2
-4. Modularity and Microservices Architecture
-5. Client and server: roles and state/data managment
-6. Security -  Common issues and solutions
-7. HTTPS and Authentication
-8. Performance analysis and improvement
+4. HTTPS and Authentication
+5. Modularity and Microservices Architecture
+6. Performance analysis and improvement
+7. Security -  Common issues and solutions
+8. Client and server: roles and state/data managment
 
 ---
 
