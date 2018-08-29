@@ -34,6 +34,7 @@
     "m3.7": "reveal-md ./module3_backend/m3.lesson07.md  --theme serif",
     "m4.1": "reveal-md ./module4_advanced_development/m4.lesson01.md  --theme serif",
     "m4.2": "reveal-md ./module4_advanced_development/m4.lesson02.md  --theme night",
-    "m4.3": "reveal-md ./module4_advanced_development/m4.lesson03.md  --theme night"
+    "m4.3": "reveal-md ./module4_advanced_development/m4.lesson03.md  --theme night",
+    "m4.6": "reveal-md ./module4_advanced_development/m4.lesson06.md  --theme night"
   }
 }
