@@ -16,19 +16,24 @@
   // and see what happen when you press the button
   const createToken = () => Math.random().toString(15).substring(11);
 
-  // tokensDB is random structure of tokens (total 1000 * 5000 tokens)
+  // tokensDB is random structure of tokens (total 2000 * 5000 tokens)
   const tokensDB = [];
-  for (let i = 0; i < 1000; i++) {
+  const tokensDBIndex2 = {};
+  let tkn;
+  for (let i = 0; i < 2000; i++) {
     const collection = [];
+
     for (let i = 0; i < 5000; i++) {
-      collection.push(createToken())
+      tkn = createToken();
+      collection.push(tkn);
+      tokensDBIndex2[tkn] = collection[collection.length - 1];  //or simply equals "true"
     }
     tokensDB.push(collection);
   }
 
   // This Array contain the user tokens
   const myTokens = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100000; i++) {
     myTokens.push(createToken())
   }
 
@@ -38,13 +43,9 @@
     console.time('howManyTokens');
     let counter = 0;
     myTokens.forEach(myToken => {
-      tokensDB.forEach(collection => {
-        collection.forEach(token => {
-          if (token === myToken) {
-            counter++;
-          }
-        })
-      })
+      if (tokensDBIndex2[myToken]) {
+        counter++;
+      }
     });
     console.timeEnd('howManyTokens');
     document.getElementById('output').innerHTML = counter;
