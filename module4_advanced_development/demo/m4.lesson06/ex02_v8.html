@@ -63,10 +63,11 @@
 	function doWorkNotOptimizable() {
 		console.time('doWorkNotOptimizable');
 		with(console) {
+			log('some log');
 			const a = 1234;
 			const b = 5678;
 			for(let i = 0; i < 10000000; i++) {
-				add((i==50000) ? a : b);
+				add((i===50000) ? a : b);
 			}
 		}
 		console.timeEnd('doWorkNotOptimizable');

@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EX01 simple request</title>
+  <meta charset="UTF-8">
+  <title>EX01 simple request</title>
 </head>
 <body>
+<p>
+  <button onclick="howManyValidTokens()">Calculate</button>
+</p>
 <pre id="output"></pre>
+
 <script>
-	"use strict";
-	const data = [];
-	for (let i = 0; i < 1000; i++) {
-		const collection = [];
-		for (let i = 0; i < 1000; i++) {
-			collection.push(Math.rand)
-		}
-		data.push()
-	}
+  "use strict";
+  // change the substring value (to something below 11)
+  // and see what happen when you press the button
+  const createToken = () => Math.random().toString(15).substring(11);
 
-	function doWork() {
-		const input = parseInt(document.getElementById('fiboInput').value, 10);
-		const output = fibonacci(input);
-		console.log('output is ' + output);
-		document.getElementById('fiboOutput').innerText = output;
-	}
+  // tokensDB is random structure of tokens (total 1000 * 5000 tokens)
+  const tokensDB = [];
+  for (let i = 0; i < 1000; i++) {
+    const collection = [];
+    for (let i = 0; i < 5000; i++) {
+      collection.push(createToken())
+    }
+    tokensDB.push(collection);
+  }
 
-	// get the N number in fibonacci series
-	function fibonacci(num) {
-		let a = 1;
-		let b = 0;
-		let temp;
+  // This Array contain the user tokens
+  const myTokens = [];
+  for (let i = 0; i < 10; i++) {
+    myTokens.push(createToken())
+  }
 
-		while (num >= 0) {
-			temp = a;
-			a = a + b;
-			b = temp;
-			num--;
-		}
-		return b;
-	}
+  // A valid token is a token which exist in tokensDB
+  // Find how many of the user's token are valid
+  function howManyValidTokens() {
+    console.time('howManyTokens');
+    let counter = 0;
+    myTokens.forEach(myToken => {
+      tokensDB.forEach(collection => {
+        collection.forEach(token => {
+          if (token === myToken) {
+            counter++;
+          }
+        })
+      })
+    });
+    console.timeEnd('howManyTokens');
+    document.getElementById('output').innerHTML = counter;
+  }
 </script>
 </body>
 </html>
