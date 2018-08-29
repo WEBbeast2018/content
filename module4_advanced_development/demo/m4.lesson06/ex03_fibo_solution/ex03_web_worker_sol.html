@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web worker - exercise 01</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Fibonacci series</h1>
+<h2>
+  Mission: externilize Fibonacci calculation to a web worker
+</h2>
+<h3>
+  Bonus: do not include the fibonacci function in the webworker file
+</h3>
+<p>For simualting heavy calculation Try get fibo of 987654321, or 2003004005 </p>
+<p>
+  <button class="btn" onclick="doWork()">DO fibonacci</button>
+</p>
+<P>
+  INPUT: <input id="fiboInput" type="number" value="987654321">
+</P>
+<p>
+  OUTPUT: <span id="fiboOutput"></span>
+</p>
+<p>
+  Just a slider: <input type="range">
+</p>
+<script>
+  "use strict";
+
+  window.foo = 'bar';
+  console.log('self', self);
+
+  function doWork() {
+    const input = parseInt(document.getElementById('fiboInput').value, 10);
+    fibonacci(input, (result) => {
+      document.getElementById('fiboOutput').innerText = result;
+    });
+  }
+
+  function fibonacci(input, callback) {
+    if (window.Worker) {
+      const myWorker = new Worker('worker.js');
+
+      // define response
+      myWorker.onmessage = function (msg) {
+        const result = msg.data;
+        console.log('result from worker: ' + result, msg);
+        callback(result);
+        // myWorker.terminate();
+      };
+
+      myWorker.postMessage(input);
+    }
+  }
+
+
+</script>
+</body>
+</html>
