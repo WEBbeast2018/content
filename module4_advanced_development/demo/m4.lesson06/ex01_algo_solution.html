@@ -18,7 +18,7 @@
 
   // tokensDB is random structure of tokens (total 2000 * 5000 tokens)
   const tokensDB = [];
-  const tokensDBIndex2 = {};
+  const tokensDBIndex = {};
   let tkn;
   for (let i = 0; i < 2000; i++) {
     const collection = [];
@@ -26,7 +26,7 @@
     for (let i = 0; i < 5000; i++) {
       tkn = createToken();
       collection.push(tkn);
-      tokensDBIndex2[tkn] = collection[collection.length - 1];  //or simply equals "true"
+      tokensDBIndex[tkn] = collection[collection.length - 1];  //or simply equals "true"
     }
     tokensDB.push(collection);
   }
@@ -43,7 +43,7 @@
     console.time('howManyTokens');
     let counter = 0;
     myTokens.forEach(myToken => {
-      if (tokensDBIndex2[myToken]) {
+      if (tokensDBIndex[myToken]) {
         counter++;
       }
     });
