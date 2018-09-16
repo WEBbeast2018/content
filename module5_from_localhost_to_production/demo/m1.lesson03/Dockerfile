@@ -1,8 +1,9 @@
-FROM 8.12.0-alpine
+FROM node:8.12.0-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
+COPY *.* ./
 
-EXPOSE 8080
+EXPOSE 3000
 
-RUN node server.js
+CMD ["node", "server.js"]
