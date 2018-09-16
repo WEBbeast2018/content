@@ -75,6 +75,14 @@ Repo structure is as following:
 
 ---
 
+### Module 5 - From localhost to Production
+1. Code Build
+2. Creating API with Swagger
+3. Dockers
+4. Deployment And CI
+
+---
+
 ## About Reveal-md
 * It is based on [revealjs](https://github.com/hakimel/reveal.js) and can use it's API.
 * Different [Themes](https://github.com/hakimel/reveal.js/tree/master/css/theme) Are supported.
