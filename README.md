@@ -79,7 +79,7 @@ Repo structure is as following:
 1. Code Build
 2. Creating API with Swagger
 3. Dockers
-4. Deployment And CI
+4. Deployment And CI/CD
 
 ---
 
